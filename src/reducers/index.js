@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
         case 'HEROES_DELETING':
             return {
                 ...state,
-                heroes: state.heroes.filter(hero => hero.id != action.payload)
+                heroes: action.payload
             }
         case 'HEROES_FETCHING_ERROR':
             return {

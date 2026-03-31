@@ -21,7 +21,7 @@ export const useHttp = () => {
             // setProcess('error');
             throw e;
         }
-    }, []);
+    }, []); 
 
     // const clearError = useCallback(() => {
         // setProcess('loading');

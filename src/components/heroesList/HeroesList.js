@@ -20,8 +20,6 @@ const HeroesList = () => {
         request("http://localhost:3001/heroes")
             .then(data => dispatch(heroesFetched(data)))
             .catch(() => dispatch(heroesFetchingError()))
-
-        // eslint-disable-next-line
     }, []);
 
     if (heroesLoadingStatus === "loading") {
@@ -36,7 +34,7 @@ const HeroesList = () => {
         }
 
         return arr.map(({id, ...props}) => {
-            return <HeroesListItem key={id} heroKey={id} {...props}/>
+            return <HeroesListItem key={id} heroes={heroes} heroKey={id} {...props}/>
         })
     }
 

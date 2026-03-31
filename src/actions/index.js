@@ -11,10 +11,11 @@ export const heroesFetched = (heroes) => {
     }
 }
 
-export const heroesDeleting = (key) => {
+export const heroesDeleting = (key, heroes, deleteHero) => {
+    deleteHero();
     return {
         type: "HEROES_DELETING",
-        payload: key
+        payload: heroes.filter(hero => hero.id != key)
     }
 }
 
