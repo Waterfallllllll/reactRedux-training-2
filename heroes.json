@@ -13,16 +13,16 @@
       "element": "earth"
     },
     {
-      "id": "365234ce-aace-4eb5-87b5-624b4f67b84a",
-      "name": "qwerweqr",
-      "description": "dsafsadpl[fsd",
-      "element": "wind"
-    },
-    {
       "id": "f9edede5-ad17-41b7-a8c1-c0cc598bb779",
       "name": "qwerweqr",
       "description": "dsafsadpl[fsd",
       "element": "water"
+    },
+    {
+      "id": "2cc35a2d-4ac3-45ab-8a50-47ac655c6175",
+      "name": "фыва",
+      "description": "фыва",
+      "element": "wind"
     }
   ],
   "filters": [
