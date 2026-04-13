@@ -11,13 +11,12 @@ export const heroesFetched = (heroes) => {
   };
 };
 
-export const heroesDeleting = (key, heroes, deleteHero) => {
-  deleteHero();
+export const heroDeleted = (id) => {
   return {
-    type: "HEROES_DELETING",
-    payload: heroes.filter((hero) => hero.id != key),
+    type: "HERO_DELETED",
+    payload: id
   };
-};
+};  
 
 export const heroesFetchingError = () => {
   return {

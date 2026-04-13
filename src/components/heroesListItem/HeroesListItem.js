@@ -1,15 +1,6 @@
-import { heroesDeleting } from "../../actions";
-import { useDispatch } from "react-redux";
-import { useHttp } from "../../hooks/http.hook";
 
-const HeroesListItem = ({ heroKey, heroes, name, description, element }) => {
+const HeroesListItem = ({ name, description, element, onDelete }) => {
 	let elementClassName;
-	const dispatch = useDispatch();
-	const {request} = useHttp();
-
-	const deleteHero = () => {
-		request(`http://localhost:3001/heroes/${heroKey}`, "DELETE");
-	}
 
 	switch (element) {
 		case "fire":
@@ -42,12 +33,11 @@ const HeroesListItem = ({ heroKey, heroes, name, description, element }) => {
 				<h3 className="card-title">{name}</h3>
 				<p className="card-text">{description}</p>
 			</div>
-			<span className="position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light">
+			<span onClick={onDelete} className="position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light">
 				<button
 					type="button"
 					className="btn-close btn-close"
 					aria-label="Close"
-					onClick={() => dispatch(heroesDeleting(heroKey, heroes, deleteHero))}
 				></button>
 			</span>
 		</li>
