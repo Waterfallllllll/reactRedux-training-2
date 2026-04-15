@@ -2,9 +2,7 @@ import { useHttp } from "../../hooks/http.hook";
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  heroesFetching,
-  heroesFetched,
-  heroesFetchingError,
+  fetchHeroes,
   heroDeleted,
 } from "../../actions";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
@@ -36,10 +34,7 @@ const HeroesList = () => {
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch("HEROES_FETCHING");
-    request("http://localhost:3001/heroes")
-      .then((data) => dispatch(heroesFetched(data)))
-      .catch(() => dispatch(heroesFetchingError()));
+    dispatch(fetchHeroes(request));
   }, []);
 
   const onDelete = useCallback(
@@ -69,7 +64,7 @@ const HeroesList = () => {
 
     return arr.map(({ id, ...props }) => {
       return (
-        <CSSTransition key={id} timeout={500} classNames="hero" exit={false}>
+        <CSSTransition key={id} timeout={500} classNames="hero" exit={true}>
           <HeroesListItem {...props} onDelete={() => onDelete(id)} />
         </CSSTransition>
       );

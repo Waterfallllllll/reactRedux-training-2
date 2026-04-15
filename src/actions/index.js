@@ -1,3 +1,17 @@
+export const fetchHeroes = (request) => (dispatch) => {
+  dispatch(heroesFetching());
+  request("http://localhost:3001/heroes")
+    .then((data) => dispatch(heroesFetched(data)))
+    .catch(() => dispatch(heroesFetchingError()));
+}
+
+export const fetchFilters = (request) => (dispatch) => {
+  dispatch(filtersFetching());
+  request("http://localhost:3001/filters")
+    .then((data) => dispatch(filtersFetched(data)))
+    .catch(() => dispatch(filtersFetchingError()));
+}
+
 export const heroesFetching = () => {
   return {
     type: "HEROES_FETCHING",
@@ -16,7 +30,7 @@ export const heroDeleted = (id) => {
     type: "HERO_DELETED",
     payload: id
   };
-};  
+};
 
 export const heroesFetchingError = () => {
   return {
@@ -49,3 +63,12 @@ export const activeFilterChanged = (element) => {
     payload: element,
   };
 };
+
+// export const activeFilterChanged = (element) => (dispatch) => {
+//   setTimeout(() => {
+//     dispatch({
+//       type: "ACTIVE_FILTER_CHANGED",
+//       payload: element,
+//     })
+//   }, 1000)
+// };
