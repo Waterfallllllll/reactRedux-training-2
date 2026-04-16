@@ -23,6 +23,12 @@
       "name": "фыва",
       "description": "фыва",
       "element": "wind"
+    },
+    {
+      "id": "d65535f3-2418-4cc8-998f-fc5b1b401841",
+      "name": "asdf",
+      "description": "asdf",
+      "element": "wind"
     }
   ],
   "filters": [
