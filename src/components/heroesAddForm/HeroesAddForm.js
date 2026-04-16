@@ -2,7 +2,7 @@ import { Formik } from "formik";
 import { useHttp } from "../../hooks/http.hook";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
-import { heroesFetched, heroesFetchingError } from "../../actions";
+import { heroesFetched, heroesFetchingError } from "../heroesList/heroesSlice";
 
 const HeroesAddForm = () => {
   const { request } = useHttp();
