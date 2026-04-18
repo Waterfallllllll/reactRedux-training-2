@@ -1,30 +1,23 @@
 import { Formik } from "formik";
-import { useHttp } from "../../hooks/http.hook";
 import { v4 as uuidv4 } from "uuid";
-import { useDispatch } from "react-redux";
-import { heroesFetched, heroesFetchingError } from "../heroesList/heroesSlice";
+import { useCreateHeroMutation } from "../../api/apiSlice";
 
 const HeroesAddForm = () => {
-  const { request } = useHttp();
-  const dispatch = useDispatch();
+  const [createHero, { isLoading }] = useCreateHeroMutation();
 
   return (
     <Formik
       initialValues={{ name: "", text: "", element: "" }}
       onSubmit={(values, { setSubmitting }) => {
-        request(
-          "http://localhost:3001/heroes",
-          "POST",
-          JSON.stringify({
-            id: uuidv4(),
-            name: values.name,
-            description: values.text,
-            element: values.element,
-          }),
-        );
-        request("http://localhost:3001/heroes")
-        .then(data => dispatch(heroesFetched(data)))
-        .catch(() => dispatch(heroesFetchingError()))
+        const newHero = {
+          id: uuidv4(),
+          name: values.name,
+          description: values.text,
+          element: values.element,
+        }
+
+        createHero(newHero).unwrap();
+
         setSubmitting(false);
       }}
     >
