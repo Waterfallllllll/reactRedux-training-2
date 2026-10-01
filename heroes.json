@@ -19,22 +19,16 @@
       "element": ""
     },
     {
-      "id": "8100a4a4-2c9e-497a-bd67-02bf16a0b968",
-      "name": "asdf",
-      "description": "asdggg",
-      "element": "wind"
-    },
-    {
-      "id": "38ac5e52-bece-4410-b439-a140d0bf8651",
-      "name": "asdf",
-      "description": "asdggg",
-      "element": "wind"
-    },
-    {
       "id": "47e9fe77-07cd-467c-9810-6d8f4f70672c",
       "name": "asdf",
       "description": "asdggg",
       "element": "wind"
+    },
+    {
+      "id": "5a1999cb-93e2-46c4-bb57-09659d9cd9ee",
+      "name": "asdf",
+      "description": "asdf",
+      "element": ""
     }
   ],
   "filters": [

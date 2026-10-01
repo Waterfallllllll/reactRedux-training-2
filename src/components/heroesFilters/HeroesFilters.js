@@ -33,6 +33,7 @@ const HeroesFilters = () => {
   return (
     <div className="card shadow-lg mt-4">
       <div className="card-body">
+        <p className="card-text"><a target="_blank" href="https://github.com/Waterfallllllll/reactRedux-training-2">Ссылка проекта на гитхаб</a></p>
         <p className="card-text">Отфильтруйте героев по элементам</p>
         <div className="btn-group">
           {elements}

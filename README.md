@@ -1,14 +1,14 @@
-# Hero Admin Panel
+# Админ-панель героев
 
-A training React SPA for managing a list of heroes.
+React-приложение для управления списком героев.
 
-The application allows you to:
-- view the list of heroes;
-- add new heroes via a form;
-- delete heroes;
-- filter heroes by element (fire, water, wind, earth).
+Приложение позволяет:
+- просматривать список героев;
+- добавлять новых героев через форму;
+- удалять героев;
+- фильтровать героев по стихии (огонь, вода, ветер, земля).
 
-## Technologies
+## Технологии
 
 - React 18
 - Redux Toolkit
@@ -16,51 +16,51 @@ The application allows you to:
 - React Redux
 - Formik
 - Bootstrap 5 + SCSS
-- json-server (mock backend)
+- json-server (мок-бэкенд)
 
-## How It Works
+## Как это работает
 
-The frontend runs via `react-scripts`, while the mock API is started in parallel using `json-server` on `http://localhost:3001`.
+Фронтенд запускается через `react-scripts`, а мок-API параллельно поднимается с помощью `json-server` на `http://localhost:3001`.
 
-- Hero endpoints (`/heroes`) are handled via RTK Query:
-  - fetch hero list;
-  - create hero;
-  - delete hero.
-- Filters (`/filters`) are loaded into a Redux slice and applied to the hero list in the UI.
+- Эндпоинты героев (`/heroes`) обрабатываются через RTK Query:
+  - получение списка героев;
+  - создание героя;
+  - удаление героя.
+- Фильтры (`/filters`) загружаются в Redux-слайс и применяются к списку героев в интерфейсе.
 
-## Installation and Run
+## Установка и запуск
 
-1. Install dependencies:
+1. Установите зависимости:
 
 ```bash
 npm install
 ```
 
-2. Start the application and mock API:
+2. Запустите приложение и мок-API:
 
 ```bash
 npm start
 ```
 
-After startup:
-- UI: `http://localhost:3000`
+После запуска:
+- интерфейс: `http://localhost:3000`
 - API: `http://localhost:3001`
 
-## Project Structure
+## Структура проекта
 
-- `src/components/app` - root application component.
-- `src/components/heroesList` - heroes list.
-- `src/components/heroesListItem` - hero card component.
-- `src/components/heroesAddForm` - hero creation form.
-- `src/components/heroesFilters` - filters and Redux slice for filtering.
-- `src/api/apiSlice.js` - RTK Query API layer.
-- `src/store/index.js` - Redux store configuration.
-- `heroes.json` - data for `json-server` (`heroes` and `filters`).
+- `src/components/app` — корневой компонент приложения.
+- `src/components/heroesList` — список героев.
+- `src/components/heroesListItem` — карточка героя.
+- `src/components/heroesAddForm` — форма создания героя.
+- `src/components/heroesFilters` — фильтры и Redux-слайс для фильтрации.
+- `src/api/apiSlice.js` — слой API на RTK Query.
+- `src/store/index.js` — конфигурация Redux-стора.
+- `heroes.json` — данные для `json-server` (`heroes` и `filters`).
 
-## Project Purpose
+## Назначение проекта
 
-This project demonstrates a basic CRUD flow in a React application with modern state management:
-- server data handling via RTK Query;
-- client UI state via Redux slice;
-- form handling via Formik;
-- integration with a local mock backend for development without a real server.
+Проект демонстрирует базовый CRUD-поток в React-приложении с современным управлением состоянием:
+- работа с серверными данными через RTK Query;
+- клиентское состояние интерфейса через Redux-слайс;
+- обработка форм через Formik;
+- интеграция с локальным мок-бэкендом для разработки без реального сервера.
